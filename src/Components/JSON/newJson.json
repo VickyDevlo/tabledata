@@ -1,0 +1,161 @@
+[
+    {
+        "id": 1,
+        "items": {
+            "security": "78963214",
+            "reqRt": "-",
+            "reqQty": "125049",
+            "secname": "FUJI CORP/AICHI",
+            "netCurrentlyLend": "85201479",
+            "setlLock": "DTC",
+            "reclaimRt": "80",
+            "collType": "UST",
+            "loanRt": "1.005",
+            "collrate": "USD",
+            "collLvl": "102",
+            "liftableQty": "771981",
+            "availableExLimits": "20149630"
+        }
+    },
+    {
+        "id": 2,
+        "items": {
+            "security": "78963215",
+            "reqRt": "-",
+            "reqQty": "459632",
+            "secname": "CTP NV",
+            "netCurrentlyLend": "321632088",
+            "setlLock": "MULTI",
+            "reclaimRt": "-",
+            "collType": "-",
+            "loanRt": "-",
+            "collrate": "-",
+            "collLvl": "-",
+            "liftableQty": "635284",
+            "availableExLimits": "74206930",
+            "multiData": {
+                "name": "setlLock",
+                "items": [
+                    {
+                        "security": "-",
+                        "reqRt": "-",
+                        "reqQty": "-",
+                        "secname": "-",
+                        "netCurrentlyLend": "-",
+                        "setlLock": "JP3",
+                        "reclaimRt": "96",
+                        "collType": "CASH",
+                        "loanRt": "0.024",
+                        "collrate": "USD",
+                        "collLvl": "102",
+                        "liftableQty": "102598",
+                        "availableExLimits": "11548963"
+                    },
+                    {
+                        "security": "-",
+                        "reqRt": "-",
+                        "reqQty": "-",
+                        "secname": "-",
+                        "netCurrentlyLend": "-",
+                        "setlLock": "JP1",
+                        "reclaimRt": "MULTI",
+                        "collType": "-",
+                        "loanRt": "-",
+                        "collrate": "-",
+                        "collLvl": "-",
+                        "liftableQty": "789650",
+                        "availableExLimits": "22105896",
+                        "multiChildData": {
+                            "name": "reclaimRt",
+                            "items": [
+                                {
+                                    "security": "-",
+                                    "reqRt": "-",
+                                    "reqQty": "-",
+                                    "secname": "-",
+                                    "netCurrentlyLend": "-",
+                                    "setlLock": "-",
+                                    "reclaimRt": "96",
+                                    "collType": "CASH",
+                                    "loanRt": "0.024",
+                                    "collrate": "USD",
+                                    "collLvl": "102",
+                                    "liftableQty": "875390",
+                                    "availableExLimits": "12549078"
+                                },
+                                {
+                                    "security": "-",
+                                    "reqRt": "-",
+                                    "reqQty": "-",
+                                    "secname": "-",
+                                    "netCurrentlyLend": "-",
+                                    "setlLock": "-",
+                                    "reclaimRt": "MULTI",
+                                    "collType": "CASH",
+                                    "loanRt": "0.024",
+                                    "collrate": "USD",
+                                    "collLvl": "102",
+                                    "liftableQty": "824150",
+                                    "availableExLimits": "12587460",
+                                    "innermultiChildData": {
+                                        "name": "reclaimRt",
+                                        "itmes": [
+                                            {
+                                                "security": "-",
+                                                "reqRt": "-",
+                                                "reqQty": "-",
+                                                "secname": "-",
+                                                "netCurrentlyLend": "-",
+                                                "setlLock": "-",
+                                                "reclaimRt": "60",
+                                                "collType": "CASH",
+                                                "loanRt": "0.024",
+                                                "collrate": "USD",
+                                                "collLvl": "102",
+                                                "liftableQty": "216598",
+                                                "availableExLimits": "90456201"
+                                            },
+                                            {
+                                                "security": "-",
+                                                "reqRt": "",
+                                                "reqQty": "-",
+                                                "secname": "-",
+                                                "netCurrentlyLend": "-",
+                                                "setlLock": "-",
+                                                "reclaimRt": "65",
+                                                "collType": "PRCA",
+                                                "loanRt": "0.024",
+                                                "collrate": "USD",
+                                                "collLvl": "102",
+                                                "liftableQty": "784199",
+                                                "availableExLimits": "12457896"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "id": 3,
+        "items": {
+            "security": "78963216",
+            "reqRt": "-",
+            "reqQty": "965820",
+            "secname": "FUJI CORP/AICHI",
+            "netCurrentlyLend": "98304566",
+            "setlLock": "DTC",
+            "reclaimRt": "100",
+            "collType": "TP1",
+            "loanRt": "0.075",
+            "collrate": "EUR",
+            "collLvl": "105",
+            "liftableQty": "201463",
+            "availableExLimits": "78963204"
+        }
+    }
+]

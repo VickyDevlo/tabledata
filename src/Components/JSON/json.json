@@ -1,0 +1,94 @@
+[
+    {
+      "id": "firstRowId",
+      "rowInfo": [
+        { "title": "title", "isExpandet": false },
+        { "title": "title", "isExpandet": false },
+        { "title": "title", "isExpandet": true, "expandRowsInfoId": "firstChildRow1","allChildClasses": ["firstChildRow1", "firstChildRow2"]},
+        { "title": "title", "isExpandet": false },
+  
+        { "title": "title", "isExpandet": false }
+      ],
+      "expandetRows": [
+        {
+          "id": "firstChildRow1",
+          "rowInfo": [
+            { "title": "first child open", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            {
+              "title": "title",
+              "isExpandet": true,
+              "expandRowsInfoId": "firstChildRow2",
+              "allChildClasses": []
+            },
+            { "title": "title", "isExpandet": false }
+          ]
+        },
+        {
+          "id": "firstChildRow2",
+          "rowInfo": [
+            { "title": "first sub child opend", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            { "title": "title", "isExpandet": false }
+          ]
+        },
+        {
+          "id": "firstChildRow2",
+          "rowInfo": [
+            { "title": "first sub child opend", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            { "title": "title", "isExpandet": false }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "secondRowId",
+      "rowInfo": [
+        { "title": "second", "isExpandet": false },
+        { "title": "row", "isExpandet": false },
+        { "title": "title", "isExpandet": false },
+        {
+          "title": "title",
+          "isExpandet": true,
+          "expandRowsInfoId": "secondChildRow1",
+          "allChildClasses": ["secondChildRow1", "secondChildRow2"]
+        },
+        { "title": "title", "isExpandet": false }
+      ],
+      "expandetRows": [
+        {
+          "id": "secondChildRow1",
+          "rowInfo": [
+            { "title": "second", "isExpandet": false },
+            { "title": "first", "isExpandet": false },
+            { "title": "child", "isExpandet": false },
+            {
+              "title": "title",
+              "isExpandet": true,
+              "expandRowsInfoId": "secondChildRow2",
+              "allChildClasses": []
+            },
+            { "title": "title", "isExpandet": false }
+          ]
+        },
+        {
+          "id": "secondChildRow2",
+          "rowInfo": [
+            { "title": "second", "isExpandet": false },
+            { "title": "sub", "isExpandet": false },
+            { "title": "child", "isExpandet": false },
+            { "title": "title", "isExpandet": false },
+            { "title": "title", "isExpandet": false }
+          ]
+        }
+      ]
+    }
+  ]
+  
+  

@@ -1,0 +1,123 @@
+[
+    {
+        "checkbox": "",
+        "security": "58746932",
+        "ReqQty": "-",
+        "Secname": "FUJI CORP/AICHI",
+        "NetCurrentlyLeadable": "70854692",
+        "SetlLoc": "DTC",
+        "ReclaimRt": "80",
+        "CollType": "UST",
+        "LoanRt": "1005",
+        "CollCurr": "USD",
+        "CollLevl": "102",
+        "LoftableQty": "523698",
+        "multiData": []
+    },
+    {
+        "checkbox": "",
+        "security": "78965450",
+        "ReqQty": "-",
+        "Secname": "CTP NV",
+        "NetCurrentlyLeadable": "12589674",
+        "SetlLoc": "MULTI",
+        "ReclaimRt": "",
+        "CollType": "",
+        "LoanRt": "",
+        "CollCurr": "",
+        "CollLevl": "",
+        "LoftableQty": "879965",
+        "multiData": [  
+                
+            {
+                "checkbox": "",
+                "security": "",
+                "ReqQty": "",
+                "Secname": "",
+                "NetCurrentlyLeadable": "",
+                "SetlLoc": "JP1",
+                "ReclaimRt": "MULTI",
+                "CollType": "TP1",
+                "LoanRt": "",
+                "CollCurr": "USD",
+                "CollLevl": "",
+                "LoftableQty": "521463"
+            }
+        ]
+    },
+    {
+        "checkbox": "",
+        "security": "25469510",
+        "ReqQty": "1.050",
+        "Secname": "STEADFAST",
+        "NetCurrentlyLeadable": "25630780",
+        "SetlLoc": "DTC",
+        "ReclaimRt": "100",
+        "CollType": "",
+        "LoanRt": "",
+        "CollCurr": "USD",
+        "CollLevl": "",
+        "LoftableQty": "453981",
+        "multiData": []
+    },
+    {
+        "checkbox": "",
+        "security": "15489632",
+        "ReqQty": "1.050",
+        "Secname": "WOOLWORTHS",
+        "NetCurrentlyLeadable": "54653215",
+        "SetlLoc": "AU8",
+        "ReclaimRt": "MULTI",
+        "CollType": "PRCA",
+        "LoanRt": "",
+        "CollCurr": "",
+        "CollLevl": "",
+        "LoftableQty": "153287",
+        "multiData": [
+            {
+                "checkbox": "",
+                "security": "",
+                "ReqQty": "-",
+                "Secname": "WOOLWORTHS",
+                "NetCurrentlyLeadable": "54653215",
+                "SetlLoc": "AU6",
+                "ReclaimRt": "80",
+                "CollType": "PRCA",
+                "LoanRt": "",
+                "CollCurr": "",
+                "CollLevl": "",
+                "LoftableQty": " "
+            }
+        ]
+    },
+    {
+        "checkbox": "",
+        "security": "25469510",
+        "ReqQty": "1.050",
+        "Secname": "FUJI CORP/AICHI",
+        "NetCurrentlyLeadable": "25630780",
+        "SetlLoc": "NL6",
+        "ReclaimRt": "MULTI",
+        "CollType": "CASH",
+        "LoanRt": "",
+        "CollCurr": "",
+        "CollLevl": "",
+        "LoftableQty": "453981",
+        "multiData": [
+            {
+                "checkbox": "",
+                "security": "",
+                "ReqQty": "",
+                "Secname": "",
+                "NetCurrentlyLeadable": "78632541",
+                "SetlLoc": "DTC ",
+                "ReclaimRt": "85",
+                "CollType": "",
+                "LoanRt": "",
+                "CollCurr": "",
+                "CollLevl": "",
+                "LoftableQty": "453981"
+            }
+        ]
+    }
+]
