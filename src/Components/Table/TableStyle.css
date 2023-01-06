@@ -4,11 +4,19 @@
     font-size: 16px;
 }
 
+.thead th {
+    padding: 8px;
+}
+
 .active {
     display: table-row;
     background-color: rgba(17, 17, 17, 0.8);
     color: white;
     border: 1px solid white;
+}
+
+.active td {
+    padding: 10px;
 }
 
 .not-Active {
@@ -21,11 +29,9 @@
     border: 1px solid white;
 }
 
-/* .childWrapper {
-    background-color: rgba(17, 17, 17, 0.8);
-    color: white;
-    border: 1px solid white;
-} */
+.TableWrapper td {
+    padding: 10px;
+}
 
 .btnHandler {
     border: none;
