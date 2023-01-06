@@ -1,94 +1,160 @@
 [
-    {
-      "id": "firstRowId",
-      "rowInfo": [
-        { "title": "title", "isExpandet": false },
-        { "title": "title", "isExpandet": false },
-        { "title": "title", "isExpandet": true, "expandRowsInfoId": "firstChildRow1","allChildClasses": ["firstChildRow1", "firstChildRow2"]},
-        { "title": "title", "isExpandet": false },
-  
-        { "title": "title", "isExpandet": false }
-      ],
-      "expandetRows": [
-        {
-          "id": "firstChildRow1",
-          "rowInfo": [
-            { "title": "first child open", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            {
-              "title": "title",
-              "isExpandet": true,
-              "expandRowsInfoId": "firstChildRow2",
-              "allChildClasses": []
-            },
-            { "title": "title", "isExpandet": false }
-          ]
-        },
-        {
-          "id": "firstChildRow2",
-          "rowInfo": [
-            { "title": "first sub child opend", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            { "title": "title", "isExpandet": false }
-          ]
-        },
-        {
-          "id": "firstChildRow2",
-          "rowInfo": [
-            { "title": "first sub child opend", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            { "title": "title", "isExpandet": false }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "secondRowId",
-      "rowInfo": [
-        { "title": "second", "isExpandet": false },
-        { "title": "row", "isExpandet": false },
-        { "title": "title", "isExpandet": false },
-        {
-          "title": "title",
-          "isExpandet": true,
-          "expandRowsInfoId": "secondChildRow1",
-          "allChildClasses": ["secondChildRow1", "secondChildRow2"]
-        },
-        { "title": "title", "isExpandet": false }
-      ],
-      "expandetRows": [
-        {
-          "id": "secondChildRow1",
-          "rowInfo": [
-            { "title": "second", "isExpandet": false },
-            { "title": "first", "isExpandet": false },
-            { "title": "child", "isExpandet": false },
-            {
-              "title": "title",
-              "isExpandet": true,
-              "expandRowsInfoId": "secondChildRow2",
-              "allChildClasses": []
-            },
-            { "title": "title", "isExpandet": false }
-          ]
-        },
-        {
-          "id": "secondChildRow2",
-          "rowInfo": [
-            { "title": "second", "isExpandet": false },
-            { "title": "sub", "isExpandet": false },
-            { "title": "child", "isExpandet": false },
-            { "title": "title", "isExpandet": false },
-            { "title": "title", "isExpandet": false }
-          ]
-        }
-      ]
+  {
+    "id": 1,
+    "items": {
+      "security": "590635618",
+      "reqRt": "-",
+      "reqQty": "120,000",
+      "secname": "FUJI CORP/AICHI",
+      "netCurrentlyLend": "70,568,999",
+      "setlLock": "DTC",
+      "reclaimRt": "80",
+      "collType": "UST",
+      "loanRt": "1,005",
+      "collrate": "USD",
+      "collLvl": "102",
+      "liftableQty": "453,981",
+      "availableExLimits": "2,980,285"
     }
-  ]
-  
-  
+  },
+  {
+    "id": 2,
+    "items": {
+      "security": "590635618",
+      "reqRt": "-",
+      "reqQty": "-",
+      "secname": "CTP",
+      "netCurrentlyLend": "70,568,999",
+      "setlLock": "MULTI",
+      "reclaimRt": "",
+      "collType": "",
+      "loanRt": "",
+      "collrate": "",
+      "collLvl": "",
+      "liftableQty": "1,245,890",
+      "availableExLimits": "1,245,890",
+      "multiData": {
+        "name": "setlLock",
+        "parentID": 2,
+        "id": "child1",
+        "items": [
+          {
+            "security": "-",
+            "reqRt": "-",
+            "reqQty": "-",
+            "secname": "-",
+            "netCurrentlyLend": "-",
+            "setlLock": "JP3",
+            "reclaimRt": "96",
+            "collType": "CASH",
+            "loanRt": "0.024",
+            "collrate": "USD",
+            "collLvl": "102",
+            "liftableQty": "262,699",
+            "availableExLimits": "1,245,890"
+          },
+          {
+            "security": "-",
+            "reqRt": "-",
+            "reqQty": "-",
+            "secname": "-",
+            "netCurrentlyLend": "-",
+            "setlLock": "JP1",
+            "reclaimRt": "MULTI",
+            "collType": "-",
+            "loanRt": "-",
+            "collrate": "-",
+            "collLvl": "-",
+            "liftableQty": "262,699",
+            "availableExLimits": "1,245,890",
+            "multiData": {
+              "parentID": 2,
+              "id": "subChild1",
+              "name": "reclaimRt",
+              "items": [
+                {
+                  "security": "-",
+                  "reqRt": "-",
+                  "reqQty": "-",
+                  "secname": "-",
+                  "netCurrentlyLend": "-",
+                  "setlLock": "-",
+                  "reclaimRt": "96",
+                  "collType": "CASH",
+                  "loanRt": "0.024",
+                  "collrate": "USD",
+                  "collLvl": "102",
+                  "liftableQty": "262,699",
+                  "availableExLimits": "1,245,890"
+                },
+                {
+                  "security": "-",
+                  "reqRt": "-",
+                  "reqQty": "-",
+                  "secname": "-",
+                  "netCurrentlyLend": "-",
+                  "setlLock": "-",
+                  "reclaimRt": "96",
+                  "collType": "CASH",
+                  "loanRt": "0.024",
+                  "collrate": "USD",
+                  "collLvl": "102",
+                  "liftableQty": "262,699",
+                  "availableExLimits": "1,245,890"
+                },
+                {
+                  "security": "-",
+                  "reqRt": "-",
+                  "reqQty": "-",
+                  "secname": "-",
+                  "netCurrentlyLend": "-",
+                  "setlLock": "-",
+                  "reclaimRt": "96",
+                  "collType": "CASH",
+                  "loanRt": "0.024",
+                  "collrate": "USD",
+                  "collLvl": "102",
+                  "liftableQty": "262,699",
+                  "availableExLimits": "1,245,890"
+                },
+                {
+                  "security": "-",
+                  "reqRt": "-",
+                  "reqQty": "-",
+                  "secname": "-",
+                  "netCurrentlyLend": "-",
+                  "setlLock": "-",
+                  "reclaimRt": "96",
+                  "collType": "CASH",
+                  "loanRt": "0.024",
+                  "collrate": "USD",
+                  "collLvl": "102",
+                  "liftableQty": "262,699",
+                  "availableExLimits": "1,245,890"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": 3,
+    "items": {
+      "security": "590635618",
+      "reqRt": "-",
+      "reqQty": "120,000",
+      "secname": "FUJI CORP/AICHI",
+      "netCurrentlyLend": "70,568,999",
+      "setlLock": "DTC",
+      "reclaimRt": "80",
+      "collType": "UST",
+      "loanRt": "1,005",
+      "collrate": "USD",
+      "collLvl": "102",
+      "liftableQty": "453,981",
+      "availableExLimits": "2,980,285"
+    }
+  }
+]
