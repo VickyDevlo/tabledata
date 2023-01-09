@@ -17,13 +17,10 @@
 
 .multiTd {
     background-color: #8d8a8a99;
-
 }
 
 .secondChild {
-
     background-color: #30303099;
-
 }
 
 .innerchind {
@@ -32,7 +29,6 @@
 
 .lastchild {
     background-color: #00000099;
-
 }
 
 .active td {
@@ -47,8 +43,6 @@
     color: white;
     background-color: #303030bd;
     border: 1px solid white;
-
-
 }
 
 .TableWrapper td {

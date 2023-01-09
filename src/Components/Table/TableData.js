@@ -166,21 +166,15 @@ const TableData = () => {
                                   {innerItems.setlLoc}
                                 </td>
                                 <td
-                                  className={`${
-                                    innerItems.innermultiChildData?.name !==
+                                  className={`${innerItems.innermultiChildData?.name !==
                                     "reclaimRt"
                                       ? "innerchind"
-                                      : ""
-                                  }
-                                          ${
-                                            innerItems.innermultiChildData
-                                              ?.id == 33 &&
-                                            activeRow.includes(
-                                              innerItems.innermultiChildData.id
-                                            )
-                                              ? "secondChild"
-                                              : ""
-                                          }`}
+                                      : ""}
+                                      ${innerItems.innermultiChildData?.id == 33 &&
+                                      activeRow.includes(innerItems.innermultiChildData.id)
+                                        ? "secondChild"
+                                        : ""
+                                    }`}
                                 >
                                   {innerItems.reclaimRt}
                                   {innerItems.innermultiChildData?.name ===
