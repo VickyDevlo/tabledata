@@ -122,13 +122,12 @@ const TableData = () => {
                             {multiItmes.setlLoc}
                           </td>
                           <td
-                          // className={
-                          //   multiItmes.multiChildData?.name ===
-                          //     "reclaimRt" &&
-                          //   activeRow.includes(item.items.multiData.id)
-                          //     ? "secondChild"
-                          //     : ""
-                          // }
+                            className={
+                              multiItmes.multiChildData?.name == "reclaimRt" &&
+                              activeRow.includes(item.items.multiData.id)
+                                ? "innerchind"
+                                : ""
+                            }
                           >
                             {multiItmes.reclaimRt}
                             {multiItmes.multiChildData &&
@@ -185,17 +184,17 @@ const TableData = () => {
                                       {innerItems.setlLoc}
                                     </td>
                                     <td
-                                    // className={
-                                    //   multiItmes.multiChildData?.name ===
-                                    //     "reclaimRt" &&
-                                    //   activeRow.includes(
-                                    //     item.items.multiData.id
-                                    //   ) &&
-                                    //   innerItems.innermultiChildData
-                                    //     ?.name !== "reclaimRt"
-                                    //     ? "secondChild"
-                                    //     : ""
-                                    // }
+                                      className={`${activeRow.includes(item.items.multiData.id) &&
+                                        innerItems.innermultiChildData?.name !=="reclaimRt"
+                                          ? "innerchind"
+                                          : ""}
+                                          ${innerItems.innermultiChildData?.id === 33 &&
+                                        activeRow.includes(
+                                          innerItems.innermultiChildData.id
+                                        )
+                                          ? "secondChild"
+                                          : ""
+                                      }`}
                                     >
                                       {innerItems.reclaimRt}
                                       {innerItems.innermultiChildData &&
@@ -269,13 +268,14 @@ const TableData = () => {
                                                 {innerChildItems.setlLoc}
                                               </td>
                                               <td
-                                              // className={
-                                              //   innerItems
-                                              //     .innermultiChildData
-                                              //     ?.itmes
-                                              //     ? "secondChild"
-                                              //     : ""
-                                              // }
+                                                className={
+                                                  innerItems.innermultiChildData
+                                                    ?.itmes &&
+                                                  innerItems.innermultiChildData
+                                                    ?.name === "reclaimRt"
+                                                    ? "secondChild"
+                                                    : ""
+                                                }
                                               >
                                                 {innerChildItems.reclaimRt}
                                               </td>
