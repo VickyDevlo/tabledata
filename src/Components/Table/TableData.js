@@ -6,179 +6,235 @@ import JsonData from "../JSON/BodyJson.json";
 const TableData = () => {
   const [activeRow, setActiveRow] = useState([]);
 
-  const handleCollaps = (userid) => {
-    console.log(userid);
-    const CurrentActiveRow = activeRow;
-    const isRowExpond = CurrentActiveRow.includes(userid);
+  const handleCollaps = (userId) => {
+    console.log(userId);
+    const currentRow = activeRow;
+    const rowExpand = currentRow.includes(userId);
 
-    const newExpandRow = isRowExpond
-      ? CurrentActiveRow.filter((id) => id !== userid)
-      : CurrentActiveRow.concat(userid);
+    const newRowExpand = rowExpand
+      ? currentRow.filter((id) => id !== userId)
+      : currentRow.concat(userId);
 
-    setActiveRow(newExpandRow);
+    setActiveRow(newRowExpand);
   };
 
   return (
-    <>
-      <table width="100%">
-        {/* HeadingData */}
-        <thead className="thead">
-          {HeadJsonData.map((headItems, headindex) => {
-            return (
-              <th scope="col" key={headindex}>
-                {headItems}
-              </th>
-            );
-          })}
-        </thead>
+    <table width="100%">
+      <thead className="thead">
+        {HeadJsonData.map((headItems, headindex) => {
+          return (
+            <th scope="col" key={headindex}>
+              {headItems}
+            </th>
+          );
+        })}
+      </thead>
 
-        {/* BodyData */}
-        <tbody>
-          {JsonData.map((item, index) => {
-            return (
-              <React.Fragment key={index}>
-                <tr className="TableWrapper">
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                  <td>{item.items.security}</td>
-                  <td>{item.items.reqRt}</td>
-                  <td>{item.items.reqQty}</td>
-                  <td>{item.items.secname}</td>
-                  <td>{item.items.netCurrentlyLend}</td>
-                  <td>
-                    {item.items.setlLoc}
-                    {item.items &&
-                      item.items.multiData &&
-                      item.items.multiData.name === "setlLoc" && (
-                        <button
-                          className="btnHandler"
-                          onClick={() => handleCollaps(item.id)}
+      <tbody>
+        {JsonData.map((item, index) => {
+          return (
+            <React.Fragment key={index}>
+              <tr className="TableWrapper">
+                <td>
+                  <input type="checkbox" />
+                </td>
+                <td>{item.items.security}</td>
+                <td>{item.items.reqRt}</td>
+                <td>{item.items.reqQty}</td>
+                <td>{item.items.secname}</td>
+                <td>{item.items.netCurrentlyLend}</td>
+                <td
+                  className={
+                    activeRow.includes(item.id) &&
+                    item.items &&
+                    item.items.multiData &&
+                    item.items.multiData.name === "setlLoc" &&
+                    item.items.multiData?.items
+                      ? "multiTd"
+                      : ""
+                  }
+                >
+                  {item.items.setlLoc}
+                  {item.items &&
+                    item.items.multiData &&
+                    item.items.multiData.name === "setlLoc" && (
+                      <button
+                        className="btnHandler"
+                        onClick={() => handleCollaps(item.id)}
+                      >
+                        {activeRow.includes(item.id) ? "-" : "+"}
+                      </button>
+                    )}
+                </td>
+                <td
+                  className={
+                    activeRow.includes(item.id) &&
+                    item.items.multiInnerChildData?.name === "reclaimRt"
+                      ? "lastchild"
+                      : ""
+                  }
+                >
+                  {item.items.reclaimRt}
+                  {item.items &&
+                    item.items.multiInnerChildData &&
+                    item.items.multiInnerChildData.name === "reclaimRt" && (
+                      <button
+                        className="btnHandler"
+                        onClick={() => handleCollaps(item.id)}
+                      >
+                        {activeRow.includes(item.id) ? "-" : "+"}
+                      </button>
+                    )}
+                </td>
+
+                <td>{item.items.collType}</td>
+                <td>{item.items.loanRt}</td>
+                <td>{item.items.collrate}</td>
+                <td>{item.items.collLvl}</td>
+                <td>{item.items.liftableQty}</td>
+                <td>{item.items.availableExLimits}</td>
+              </tr>
+
+              {item.items.multiData &&
+                item.items.multiData.items.map(
+                  (multiItmes, multiChildIndex) => {
+                    return (
+                      <React.Fragment key={multiChildIndex}>
+                        <tr
+                          className={
+                            activeRow.includes(item.id)
+                              ? "active"
+                              : "not-Active"
+                          }
+                          key={multiChildIndex}
                         >
-                          {activeRow.includes(item.id) ? "-" : "+"}
-                        </button>
-                      )}
-                  </td>
-                  <td>{item.items.reclaimRt}</td>
-                  <td>{item.items.collType}</td>
-                  <td>{item.items.loanRt}</td>
-                  <td>{item.items.collrate}</td>
-                  <td>{item.items.collLvl}</td>
-                  <td>{item.items.liftableQty}</td>
-                  <td>{item.items.availableExLimits}</td>
-                </tr>
-
-                {item.items.multiData &&
-                  item.items.multiData.items.map(
-                    (multiItmes, multiChildIndex) => {
-                      return (
-                        <React.Fragment>
-                          <tr
+                          <td></td>
+                          <td>{multiItmes.security}</td>
+                          <td>{multiItmes.reqRt}</td>
+                          <td>{multiItmes.reqQty}</td>
+                          <td>{multiItmes.secname}</td>
+                          <td>{multiItmes.netCurrentlyLend}</td>
+                          <td
                             className={
-                              activeRow.includes(item.id)
-                                ? "active"
-                                : "not-Active"
+                              activeRow.includes(item.id) ? "multiTd" : ""
                             }
-                            key={multiChildIndex}
                           >
-                            <td>
-                              <input type="checkbox" />
-                            </td>
-                            <td>{multiItmes.security}</td>
-                            <td>{multiItmes.reqRt}</td>
-                            <td>{multiItmes.reqQty}</td>
-                            <td>{multiItmes.secname}</td>
-                            <td>{multiItmes.netCurrentlyLend}</td>
-                            <td>{multiItmes.setlLoc}</td>
-                            <td>
-                              {multiItmes.reclaimRt}
-                              {multiItmes.multiChildData &&
-                                multiItmes.multiChildData.items &&
-                                multiItmes.multiChildData.name ===
-                                  "reclaimRt" && (
-                                  <button
-                                    className="btnHandler"
-                                    onClick={() =>
-                                      handleCollaps(item.items.multiData.id)
+                            {multiItmes.setlLoc}
+                          </td>
+                          <td
+                          // className={
+                          //   multiItmes.multiChildData?.name ===
+                          //     "reclaimRt" &&
+                          //   activeRow.includes(item.items.multiData.id)
+                          //     ? "secondChild"
+                          //     : ""
+                          // }
+                          >
+                            {multiItmes.reclaimRt}
+                            {multiItmes.multiChildData &&
+                              multiItmes.multiChildData.items &&
+                              multiItmes.multiChildData.name ===
+                                "reclaimRt" && (
+                                <button
+                                  className="btnHandler"
+                                  onClick={() =>
+                                    handleCollaps(item.items.multiData.id)
+                                  }
+                                >
+                                  {activeRow.includes(item.items.multiData.id)
+                                    ? "-"
+                                    : "+"}
+                                </button>
+                              )}
+                          </td>
+                          <td>{multiItmes.collType}</td>
+                          <td>{multiItmes.loanRt}</td>
+                          <td>{multiItmes.collrate}</td>
+                          <td>{multiItmes.collLvl}</td>
+                          <td>{multiItmes.liftableQty}</td>
+                          <td>{multiItmes.availableExLimits}</td>
+                        </tr>
+
+                        {multiItmes.multiChildData &&
+                          multiItmes.multiChildData.items.map(
+                            (innerItems, innerChildIndex) => {
+                              return (
+                                <React.Fragment key={innerChildIndex}>
+                                  <tr
+                                    className={
+                                      activeRow.includes(
+                                        item.items.multiData.id
+                                      )
+                                        ? "active"
+                                        : "not-Active"
                                     }
                                   >
-                                    {activeRow.includes(item.items.multiData.id)
-                                      ? "-"
-                                      : "+"}
-                                  </button>
-                                )}
-                            </td>
-                            <td>{multiItmes.collType}</td>
-                            <td>{multiItmes.loanRt}</td>
-                            <td>{multiItmes.collrate}</td>
-                            <td>{multiItmes.collLvl}</td>
-                            <td>{multiItmes.liftableQty}</td>
-                            <td>{multiItmes.availableExLimits}</td>
-                          </tr>
-
-                          {multiItmes.multiChildData &&
-                            multiItmes.multiChildData.items.map(
-                              (innerItems, innerChildIndex) => {
-                                return (
-                                  <React.Fragment key={innerChildIndex}>
-                                    <tr
+                                    <td></td>
+                                    <td>{innerItems.security}</td>
+                                    <td>{innerItems.reqRt}</td>
+                                    <td>{innerItems.reqQty}</td>
+                                    <td>{innerItems.secname}</td>
+                                    <td>{innerItems.netCurrentlyLend}</td>
+                                    <td
                                       className={
-                                        activeRow.includes(
-                                          item.items.multiData.id
-                                        )
-                                          ? "active"
-                                          : "not-Active"
+                                        activeRow.includes(item.id)
+                                          ? "multiTd"
+                                          : ""
                                       }
                                     >
-                                      <td>
-                                        <input type="checkbox" />
-                                      </td>
-                                      <td>{innerItems.security}</td>
-                                      <td>{innerItems.reqRt}</td>
-                                      <td>{innerItems.reqQty}</td>
-                                      <td>{innerItems.secname}</td>
-                                      <td>{innerItems.netCurrentlyLend}</td>
-                                      <td>{innerItems.setlLoc}</td>
-                                      <td>
-                                        {innerItems.reclaimRt}
-                                        {innerItems.innermultiChildData &&
-                                          innerItems.innermultiChildData
-                                            .itmes &&
-                                          innerItems.innermultiChildData
-                                            .name === "reclaimRt" && (
-                                            <button
-                                              className="btnHandler"
-                                              onClick={() =>
-                                                handleCollaps(
-                                                  innerItems.innermultiChildData
-                                                    .id
-                                                )
-                                              }
-                                            >
-                                              {activeRow.includes(
+                                      {innerItems.setlLoc}
+                                    </td>
+                                    <td
+                                    // className={
+                                    //   multiItmes.multiChildData?.name ===
+                                    //     "reclaimRt" &&
+                                    //   activeRow.includes(
+                                    //     item.items.multiData.id
+                                    //   ) &&
+                                    //   innerItems.innermultiChildData
+                                    //     ?.name !== "reclaimRt"
+                                    //     ? "secondChild"
+                                    //     : ""
+                                    // }
+                                    >
+                                      {innerItems.reclaimRt}
+                                      {innerItems.innermultiChildData &&
+                                        innerItems.innermultiChildData.itmes &&
+                                        innerItems.innermultiChildData.name ===
+                                          "reclaimRt" && (
+                                          <button
+                                            className="btnHandler"
+                                            onClick={() =>
+                                              handleCollaps(
                                                 innerItems.innermultiChildData
                                                   .id
                                               )
-                                                ? "-"
-                                                : "+"}
-                                            </button>
-                                          )}
-                                      </td>
-                                      <td>{innerItems.collType}</td>
-                                      <td>{innerItems.loanRt}</td>
-                                      <td>{innerItems.collrate}</td>
-                                      <td>{innerItems.collLvl}</td>
-                                      <td>{innerItems.liftableQty}</td>
-                                      <td>{innerItems.availableExLimits}</td>
-                                    </tr>
+                                            }
+                                          >
+                                            {activeRow.includes(
+                                              innerItems.innermultiChildData.id
+                                            )
+                                              ? "-"
+                                              : "+"}
+                                          </button>
+                                        )}
+                                    </td>
+                                    <td>{innerItems.collType}</td>
+                                    <td>{innerItems.loanRt}</td>
+                                    <td>{innerItems.collrate}</td>
+                                    <td>{innerItems.collLvl}</td>
+                                    <td>{innerItems.liftableQty}</td>
+                                    <td>{innerItems.availableExLimits}</td>
+                                  </tr>
 
-                                    {innerItems.innermultiChildData &&
-                                      innerItems.innermultiChildData.itmes.map(
-                                        (
-                                          innnerChildItems,
-                                          innerMultiChildIndex
-                                        ) => {
-                                          return (
+                                  {innerItems.innermultiChildData &&
+                                    innerItems.innermultiChildData.itmes.map(
+                                      (
+                                        innerChildItems,
+                                        innerMultiChildIndex
+                                      ) => {
+                                        return (
+                                          <>
                                             <tr
                                               key={innerMultiChildIndex}
                                               className={
@@ -190,64 +246,101 @@ const TableData = () => {
                                                   : "not-Active"
                                               }
                                             >
+                                              <td></td>
                                               <td>
-                                                <input type="checkbox" />
+                                                {innerChildItems.security}
                                               </td>
-                                              <td>
-                                                {innnerChildItems.security}
-                                              </td>
-                                              <td>{innnerChildItems.reqRt}</td>
-                                              <td>{innnerChildItems.reqQty}</td>
-                                              <td>
-                                                {innnerChildItems.secname}
-                                              </td>
+                                              <td>{innerChildItems.reqRt}</td>
+                                              <td>{innerChildItems.reqQty}</td>
+                                              <td>{innerChildItems.secname}</td>
                                               <td>
                                                 {
-                                                  innnerChildItems.netCurrentlyLend
+                                                  innerChildItems.netCurrentlyLend
                                                 }
                                               </td>
-                                              <td>
-                                                {innnerChildItems.setlLoc}
+                                              <td
+                                                className={
+                                                  item.items.multiData.name ===
+                                                  "setlLoc"
+                                                    ? "multiTd"
+                                                    : ""
+                                                }
+                                              >
+                                                {innerChildItems.setlLoc}
+                                              </td>
+                                              <td
+                                              // className={
+                                              //   innerItems
+                                              //     .innermultiChildData
+                                              //     ?.itmes
+                                              //     ? "secondChild"
+                                              //     : ""
+                                              // }
+                                              >
+                                                {innerChildItems.reclaimRt}
                                               </td>
                                               <td>
-                                                {innnerChildItems.reclaimRt}
+                                                {innerChildItems.collType}
                                               </td>
+                                              <td>{innerChildItems.loanRt}</td>
                                               <td>
-                                                {innnerChildItems.collType}
+                                                {innerChildItems.collrate}
                                               </td>
-                                              <td>{innnerChildItems.loanRt}</td>
+                                              <td>{innerChildItems.collLvl}</td>
                                               <td>
-                                                {innnerChildItems.collrate}
-                                              </td>
-                                              <td>
-                                                {innnerChildItems.collLvl}
-                                              </td>
-                                              <td>
-                                                {innnerChildItems.liftableQty}
+                                                {innerChildItems.liftableQty}
                                               </td>
                                               <td>
                                                 {
-                                                  innnerChildItems.availableExLimits
+                                                  innerChildItems.availableExLimits
                                                 }
                                               </td>
                                             </tr>
-                                          );
-                                        }
-                                      )}
-                                  </React.Fragment>
-                                );
-                              }
-                            )}
-                        </React.Fragment>
-                      );
+                                          </>
+                                        );
+                                      }
+                                    )}
+                                </React.Fragment>
+                              );
+                            }
+                          )}
+                      </React.Fragment>
+                    );
+                  }
+                )}
+              {item.items.multiInnerChildData?.items.map((chidData) => {
+                return (
+                  <tr
+                    className={
+                      activeRow.includes(item.id) ? "active" : "not-Active"
                     }
-                  )}
-              </React.Fragment>
-            );
-          })}
-        </tbody>
-      </table>
-    </>
+                  >
+                    <td></td>
+                    <td>{chidData.security}</td>
+                    <td>{chidData.reqRt}</td>
+                    <td>{chidData.reqQty}</td>
+                    <td>{chidData.secname}</td>
+                    <td>{chidData.netCurrentlyLend}</td>
+                    <td>{chidData.setlLoc}</td>
+                    <td
+                      className={activeRow.includes(item.id) ? "lastchild" : ""}
+                    >
+                      {chidData.reclaimRt}
+                    </td>
+                    <td>{chidData.collType}</td>
+                    <td>{chidData.loanRt}</td>
+                    <td>{chidData.collrate}</td>
+                    <td>{chidData.collLvl}</td>
+                    <td>{chidData.liftableQty}</td>
+                    <td>{chidData.availableExLimits}</td>
+                  </tr>
+                );
+              })}
+            </React.Fragment>
+          );
+        })}
+      </tbody>
+    </table>
   );
 };
 
