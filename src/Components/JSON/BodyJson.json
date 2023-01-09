@@ -156,16 +156,15 @@
       "netCurrentlyLend": "98304566",
       "setlLoc": "DTC",
       "reclaimRt": "MULTI",
-      "collType": "TP1",
-      "loanRt": "0.075",
-      "collrate": "EUR",
-      "collLvl": "105",
+      "collType": "PRCA",
+      "loanRt": " ",
+      "collrate": "",
+      "collLvl": "",
       "liftableQty": "201463",
       "availableExLimits": "78963204",
       "multiInnerChildData": {
         "name": "reclaimRt",
-        "parentID": 3,
-        "id": 44,
+        
         "items": [
           {
             "security": "",
