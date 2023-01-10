@@ -15,7 +15,7 @@
     border: 1px solid white;
 }
 
-.multiTd {
+.firstChild {
     background-color: #8d8a8a99;
 }
 
@@ -24,12 +24,12 @@
     /* background-color: #00000099; */
 }
 
-.innerchind {
+.innerChild {   
     background-color: #4b4a4a99;
     /* background-color: #00000099; */
 }
 
-.lastchild {
+.lastChild {
     background-color: #00000099;
 }
 

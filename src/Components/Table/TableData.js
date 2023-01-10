@@ -45,7 +45,7 @@ const TableData = () => {
                 <td>{item.items.netCurrentlyLend}</td>
                 <td className={activeRow.includes(item.id) &&
                     item.items.multiData?.name === "setlLoc"
-                      ? "multiTd"
+                      ? "firstChild"
                       : ""
                   }
                 >
@@ -58,7 +58,7 @@ const TableData = () => {
                 </td>
                 <td className={activeRow.includes(item.id) 
                      && item.items.multiInnerChildData?.name === "reclaimRt"
-                      ? "lastchild"
+                      ? "lastChild"
                       : ""
                     }
                 >
@@ -95,13 +95,13 @@ const TableData = () => {
                         <td>{multiItmes.reqQty}</td>
                         <td>{multiItmes.secname}</td>
                         <td>{multiItmes.netCurrentlyLend}</td>
-                        <td className={activeRow.includes(item.id) ? "multiTd" : ""}
+                        <td className={activeRow.includes(item.id) ? "firstChild" : ""}
                         >
                           {multiItmes.setlLoc}
                         </td>
                         <td className={multiItmes.multiChildData?.name == "reclaimRt"
                                && activeRow.includes(item.items.multiData.id)
-                              ? "innerchind"
+                              ? "innerChild"
                               : ""
                            }
                         >
@@ -138,12 +138,12 @@ const TableData = () => {
                                 <td>{innerItems.reqQty}</td>
                                 <td>{innerItems.secname}</td>
                                 <td>{innerItems.netCurrentlyLend}</td>
-                                <td className={activeRow.includes(item.id) ? "multiTd" : ""}
+                                <td className={activeRow.includes(item.id) ? "firstChild" : ""}
                                 >
                                   {innerItems.setlLoc}
                                 </td>
                                 <td className={`${innerItems.innermultiChildData?.name !== "reclaimRt"
-                                      ? "innerchind"
+                                      ? "innerChild"
                                       : ""
                                   }
                                     ${innerItems.innermultiChildData?.id == 33 &&
@@ -197,7 +197,7 @@ const TableData = () => {
                                         {innerChildItems.netCurrentlyLend}
                                       </td>
                                       <td className={item.items.multiData.name === "setlLoc"
-                                            ? "multiTd"
+                                            ? "firstChild"
                                             : ""
                                         }
                                       >
@@ -243,7 +243,7 @@ const TableData = () => {
                       <td>{chidData.secname}</td>
                       <td>{chidData.netCurrentlyLend}</td>
                       <td>{chidData.setlLoc}</td>
-                      <td className={activeRow.includes(item.id) ? "lastchild" : ""}
+                      <td className={activeRow.includes(item.id) ? "lastChild" : ""}
                       >
                         {chidData.reclaimRt}
                       </td>
