@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import "./TableStyle.css";
 import HeadJsonData from "../JSON/HeadJson.json";
 import JsonData from "../JSON/BodyJson.json";
@@ -23,7 +23,7 @@ const TableData = () => {
       <thead className="thead">
         {HeadJsonData.map((headItems, headindex) => {
           return (
-            <th scope="col" key={headindex}>
+            <th key={headindex}>
               {headItems}
             </th>
           );
@@ -33,7 +33,7 @@ const TableData = () => {
       <tbody>
         {JsonData.map((item, index) => {
           return (
-            <React.Fragment key={index}>
+            <Fragment key={index}>
               <tr className="TableWrapper">
                 <td>
                   <input type="checkbox" />
@@ -85,7 +85,7 @@ const TableData = () => {
               {item.items.multiData?.items.map(
                 (multiItmes, multiChildIndex) => {
                   return (
-                    <React.Fragment key={multiChildIndex}>
+                    <Fragment key={multiChildIndex}>
                       <tr className={activeRow.includes(item.id) ? "active" : "not-Active"}
                         key={multiChildIndex}
                       >
@@ -126,7 +126,7 @@ const TableData = () => {
                       {multiItmes.multiChildData?.items.map(
                         (innerItems, innerChildIndex) => {
                           return (
-                            <React.Fragment key={innerChildIndex}>
+                            <Fragment key={innerChildIndex}>
                               <tr className={ activeRow.includes(item.items.multiData.id)
                                     ? "active"
                                     : "not-Active"
@@ -222,11 +222,11 @@ const TableData = () => {
                                   );
                                 }
                               )}
-                            </React.Fragment>
+                            </Fragment>
                           );
                         }
                       )}
-                    </React.Fragment>
+                    </Fragment>
                   );
                 }
               )}
@@ -257,7 +257,7 @@ const TableData = () => {
                   );
                 }
               )}
-            </React.Fragment>
+            </Fragment>
           );
         })}
       </tbody>
