@@ -21,10 +21,12 @@
 
 .secondChild {
     background-color: #30303099;
+    /* background-color: #00000099; */
 }
 
 .innerchind {
     background-color: #4b4a4a99;
+    /* background-color: #00000099; */
 }
 
 .lastchild {

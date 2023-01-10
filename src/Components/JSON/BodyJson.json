@@ -69,7 +69,6 @@
             "availableExLimits": "22105896",
             "multiChildData": {
               "name": "reclaimRt",
-              "parentID": 2,
               "id": 22,
               "items": [
                 {
@@ -103,7 +102,6 @@
                   "availableExLimits": "12587460",
                   "innermultiChildData": {
                     "name": "reclaimRt",
-                    "parentID": 2,
                     "id": 33,
                     "itmes": [
                       {
@@ -164,7 +162,6 @@
       "availableExLimits": "78963204",
       "multiInnerChildData": {
         "name": "reclaimRt",
-        
         "items": [
           {
             "security": "",
@@ -179,7 +176,7 @@
             "collrate": "USD",
             "collLvl": "106",
             "liftableQty": "875390",
-            "availableExLimits": "125490178"
+            "availableExLimits": "12549078"
           }
         ]
       }

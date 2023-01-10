@@ -43,9 +43,7 @@ const TableData = () => {
                 <td>{item.items.reqQty}</td>
                 <td>{item.items.secname}</td>
                 <td>{item.items.netCurrentlyLend}</td>
-                <td
-                  className={
-                    activeRow.includes(item.id) &&
+                <td className={activeRow.includes(item.id) &&
                     item.items.multiData?.name === "setlLoc"
                       ? "multiTd"
                       : ""
@@ -53,24 +51,20 @@ const TableData = () => {
                 >
                   {item.items.setlLoc}
                   {item.items.multiData?.name === "setlLoc" && (
-                    <button
-                      className="btnHandler"
-                      onClick={() => handleCollaps(item.id)}
-                    >
+                    <button className="btnHandler" onClick={() => handleCollaps(item.id)}>
                       {activeRow.includes(item.id) ? "-" : "+"}
                     </button>
                   )}
                 </td>
-                <td
-                  className={
-                    activeRow.includes(item.id) &&
-                    item.items.multiInnerChildData?.name === "reclaimRt"
+                <td className={activeRow.includes(item.id) 
+                     && item.items.multiInnerChildData?.name === "reclaimRt"
                       ? "lastchild"
                       : ""
-                  }
+                    }
                 >
                   {item.items.reclaimRt}
-                  {item.items.multiInnerChildData?.name === "reclaimRt" && (
+                  {item.items.multiInnerChildData?.name === "reclaimRt" 
+                  && (
                     <button
                       className="btnHandler"
                       onClick={() => handleCollaps(item.id)}
@@ -92,10 +86,7 @@ const TableData = () => {
                 (multiItmes, multiChildIndex) => {
                   return (
                     <React.Fragment key={multiChildIndex}>
-                      <tr
-                        className={
-                          activeRow.includes(item.id) ? "active" : "not-Active"
-                        }
+                      <tr className={activeRow.includes(item.id) ? "active" : "not-Active"}
                         key={multiChildIndex}
                       >
                         <td></td>
@@ -104,28 +95,19 @@ const TableData = () => {
                         <td>{multiItmes.reqQty}</td>
                         <td>{multiItmes.secname}</td>
                         <td>{multiItmes.netCurrentlyLend}</td>
-                        <td
-                          className={
-                            activeRow.includes(item.id) ? "multiTd" : ""
-                          }
+                        <td className={activeRow.includes(item.id) ? "multiTd" : ""}
                         >
                           {multiItmes.setlLoc}
                         </td>
-                        <td
-                          className={
-                            multiItmes.multiChildData?.name == "reclaimRt" &&
-                            activeRow.includes(item.items.multiData.id)
+                        <td className={multiItmes.multiChildData?.name == "reclaimRt"
+                               && activeRow.includes(item.items.multiData.id)
                               ? "innerchind"
                               : ""
-                          }
+                           }
                         >
                           {multiItmes.reclaimRt}
                           {multiItmes.multiChildData?.name === "reclaimRt" && (
-                            <button
-                              className="btnHandler"
-                              onClick={() =>
-                                handleCollaps(item.items.multiData.id)
-                              }
+                            <button className="btnHandler" onClick={() => handleCollaps(item.items.multiData.id)}
                             >
                               {activeRow.includes(item.items.multiData.id)
                                 ? "-"
@@ -145,12 +127,10 @@ const TableData = () => {
                         (innerItems, innerChildIndex) => {
                           return (
                             <React.Fragment key={innerChildIndex}>
-                              <tr
-                                className={
-                                  activeRow.includes(item.items.multiData.id)
+                              <tr className={ activeRow.includes(item.items.multiData.id)
                                     ? "active"
                                     : "not-Active"
-                                }
+                                  }
                               >
                                 <td></td>
                                 <td>{innerItems.security}</td>
@@ -158,27 +138,24 @@ const TableData = () => {
                                 <td>{innerItems.reqQty}</td>
                                 <td>{innerItems.secname}</td>
                                 <td>{innerItems.netCurrentlyLend}</td>
-                                <td
-                                  className={
-                                    activeRow.includes(item.id) ? "multiTd" : ""
-                                  }
+                                <td className={activeRow.includes(item.id) ? "multiTd" : ""}
                                 >
                                   {innerItems.setlLoc}
                                 </td>
-                                <td
-                                  className={`${innerItems.innermultiChildData?.name !==
-                                    "reclaimRt"
+                                <td className={`${innerItems.innermultiChildData?.name !== "reclaimRt"
                                       ? "innerchind"
-                                      : ""}
-                                      ${innerItems.innermultiChildData?.id == 33 &&
-                                      activeRow.includes(innerItems.innermultiChildData.id)
-                                        ? "secondChild"
-                                        : ""
-                                    }`}
+                                      : ""
+                                  }
+                                    ${innerItems.innermultiChildData?.id == 33 &&
+                                        activeRow.includes(innerItems.innermultiChildData.id)
+                                          ? "secondChild"
+                                          : ""
+                                    }`
+                                  }
                                 >
                                   {innerItems.reclaimRt}
-                                  {innerItems.innermultiChildData?.name ===
-                                    "reclaimRt" && (
+                                  {innerItems.innermultiChildData?.name === "reclaimRt" 
+                                  && (
                                     <button
                                       className="btnHandler"
                                       onClick={() =>
@@ -187,11 +164,10 @@ const TableData = () => {
                                         )
                                       }
                                     >
-                                      {activeRow.includes(
-                                        innerItems.innermultiChildData.id
-                                      )
+                                      {activeRow.includes(innerItems.innermultiChildData.id)
                                         ? "-"
                                         : "+"}
+
                                     </button>
                                   )}
                                 </td>
@@ -206,15 +182,11 @@ const TableData = () => {
                               {innerItems.innermultiChildData?.itmes.map(
                                 (innerChildItems, innerMultiChildIndex) => {
                                   return (
-                                    <tr
-                                      key={innerMultiChildIndex}
-                                      className={
-                                        activeRow.includes(
-                                          innerItems.innermultiChildData.id
-                                        )
+                                    <tr key={innerMultiChildIndex} 
+                                        className={activeRow.includes(innerItems.innermultiChildData.id)
                                           ? "active"
                                           : "not-Active"
-                                      }
+                                        }
                                     >
                                       <td></td>
                                       <td>{innerChildItems.security}</td>
@@ -224,20 +196,14 @@ const TableData = () => {
                                       <td>
                                         {innerChildItems.netCurrentlyLend}
                                       </td>
-                                      <td
-                                        className={
-                                          item.items.multiData.name ===
-                                          "setlLoc"
+                                      <td className={item.items.multiData.name === "setlLoc"
                                             ? "multiTd"
                                             : ""
                                         }
                                       >
                                         {innerChildItems.setlLoc}
                                       </td>
-                                      <td
-                                        className={
-                                          innerItems.innermultiChildData
-                                            ?.name === "reclaimRt"
+                                      <td className={innerItems.innermultiChildData?.name === "reclaimRt"
                                             ? "secondChild"
                                             : ""
                                         }
@@ -267,11 +233,8 @@ const TableData = () => {
               {item.items.multiInnerChildData?.items.map(
                 (chidData, lastChild) => {
                   return (
-                    <tr
-                      key={lastChild}
-                      className={
-                        activeRow.includes(item.id) ? "active" : "not-Active"
-                      }
+                    <tr key={lastChild}
+                      className={activeRow.includes(item.id) ? "active" : "not-Active"}
                     >
                       <td></td>
                       <td>{chidData.security}</td>
@@ -280,10 +243,7 @@ const TableData = () => {
                       <td>{chidData.secname}</td>
                       <td>{chidData.netCurrentlyLend}</td>
                       <td>{chidData.setlLoc}</td>
-                      <td
-                        className={
-                          activeRow.includes(item.id) ? "lastchild" : ""
-                        }
+                      <td className={activeRow.includes(item.id) ? "lastchild" : ""}
                       >
                         {chidData.reclaimRt}
                       </td>
